@@ -3,10 +3,22 @@
 #include <stdlib.h>
 
 int main() {
+    
     int menu;
     int atributo;
+    int repetir;
 
-    // Carta 1
+
+     do {
+     // Menu principal
+    printf("Menu Principal\n");
+    printf("1. Iniciar Jogo\n");
+    printf("2. Ver Regras\n");
+    printf("3. Sair\n");
+    printf("Escolha uma opcao: ");
+    scanf("%d", &menu);
+
+       // Carta 1
     char estado1[50], cidade1[50];
     int populacao1, pontosTuristicos1;
     float area1, pib1;
@@ -15,14 +27,6 @@ int main() {
     char estado2[50], cidade2[50];
     int populacao2, pontosTuristicos2;
     float area2, pib2;
-
-    // Menu principal
-    printf("Menu Principal\n");
-    printf("1. Iniciar Jogo\n");
-    printf("2. Ver Regras\n");
-    printf("3. Sair\n");
-    printf("Escolha uma opcao: ");
-    scanf("%d", &menu);
 
     switch (menu) {
         case 1:
@@ -84,7 +88,7 @@ int main() {
                     break;
 
                 case 2:
-                    printf("População:\n");
+                    printf("Populacao:\n");
                     printf("Carta 1: %d\n", populacao1);
                     printf("Carta 2: %d\n", populacao2);
 
@@ -97,7 +101,7 @@ int main() {
                     break;
     
                 case 3:
-                    printf("Área:\n");
+                    printf("Area:\n");
                     printf("Carta 1: %.2f km²\n", area1);
                     printf("Carta 2: %.2f km²\n", area2);
 
@@ -110,7 +114,7 @@ int main() {
                     break;
 
                 case 4:
-                    printf("PIB per capita:\n");
+                    printf("PIB:\n");
                     printf("Carta 1: R$ %.6f\n", pibPerCapita1);
                     printf("Carta 2: R$ %.6f\n", pibPerCapita2);
 
@@ -123,7 +127,7 @@ int main() {
                     break;
 
                 case 5:
-                    printf("Pontos Turísticos:\n");
+                    printf("Quantidade de Pontos Turisticos:\n");
                     printf("Carta 1: %d\n", pontosTuristicos1);
                     printf("Carta 2: %d\n", pontosTuristicos2);
 
@@ -136,7 +140,7 @@ int main() {
                     break;
 
                 case 6:
-                    printf("Densidade Demográfica:\n");
+                    printf("Densidade Demografica:\n");
                     printf("Carta 1: %.2f hab/km²\n", densidade1);
                     printf("Carta 2: %.2f hab/km²\n", densidade2);
 
@@ -149,14 +153,14 @@ int main() {
                     break;
 
                 default:
-                    printf("Opção de atributo inválida.\n");
+                    printf("Opcao de atributo invalida.\n");
             }
 
                 printf("\nDeseja comparar outro atributo? (1 - Sim / 0 - Não): ");
                 scanf("%d", &repetir);
             } while (repetir == 1);
 
-            printf("\nEncerrando comparações...\n");
+            printf("\nEncerrando comparacoes.\n");
             break;
 
  
@@ -165,7 +169,8 @@ int main() {
             printf("\nRegras do Jogo\n");
             printf("- Voce deve cadastrar duas cartas com os atributos solicitados\n");
             printf("- Escolha um atributo para comparar as cartas\n");
-            printf("- Vence a carta com maior valor no atributo (exceto na densidade demografica pois vence a menor)\n");
+            printf("- Vence a carta com maior valor no atributo (exceto na densidade demografica pois vence a menor)\n\n\n\n");
+            
             break;
 
         case 3:
@@ -173,8 +178,11 @@ int main() {
             break;
 
         default:
-            printf("Opção inválida. Reinicie o programa.\n");
-    }
+            printf("Opcao invalida.\n\n\n\n");
+                    
+     }
+
+    } while (menu != 3);
 
     return 0;
 }
